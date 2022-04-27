@@ -1,0 +1,42 @@
+.Characters {
+    display: grid;
+    grid-template-columns: repeat(4, 300px);
+    grid-row: 400px;
+    place-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.container {
+    display: grid;
+    grid-template-rows: 320px 250px;
+    border: 2px solid black;
+    border-radius: 10px;
+    place-content: center;
+    place-items: center;
+}
+
+.container-character {
+    display: grid;  
+    grid-template-rows: 60px 260px;
+    justify-items: center;
+    align-items: flex-end;
+}
+
+.container-character img {
+    width: 80% ;
+}
+.container-character h2 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.container-data {
+    display: grid;
+    gap: 10px;
+}
+
+.container-data h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
