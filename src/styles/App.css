@@ -1,0 +1,13 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.bg-dark  {
+    color: #fff;
+    background-color: black;
+    transition: all 0.5s;
+}
+.bg-light {
+    transition: all 0.5s;
+}

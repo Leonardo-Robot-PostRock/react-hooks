@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import useInitialState from "../hooks/useInitialState";
 import "../styles/Characters.css";
 
 const Characters = () => {
   const [characters, setCharacters] = useState([]);
+  const {bg} = useInitialState();
 
   useEffect(() => {
     fetch("https://rickandmortyapi.com/api/character/")
@@ -13,7 +15,7 @@ const Characters = () => {
   return (
     <div className="Characters">
       {characters.map((character, index) => (
-        <div className="container" key={index} id={index}>
+        <div className={"container " + bg} key={index} id={index}>
           <div className="container-character">
             <h2 className="item item-1">{character.name}</h2>
             <img

@@ -9,25 +9,35 @@
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
 .container {
     display: grid;
     grid-template-rows: 320px 250px;
-    border: 2px solid black;
     border-radius: 10px;
     place-content: center;
     place-items: center;
 }
 
+.bg-light .container {
+    border: black solid;
+}
+
+.bg-dark .container {
+    border: white solid;
+}
+
+
 .container-character {
-    display: grid;  
+    display: grid;
     grid-template-rows: 60px 260px;
     justify-items: center;
     align-items: flex-end;
 }
 
 .container-character img {
-    width: 80% ;
+    width: 80%;
 }
+
 .container-character h2 {
     margin: 0;
     font-size: 1.2em;
