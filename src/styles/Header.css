@@ -1,0 +1,24 @@
+.Header {
+    padding: 10px;
+    width: 100%;
+    min-width: 320px;
+}
+
+.button-bg {
+    margin-top: 10px;
+    width: 90px;
+    height: 30px;
+    border: none;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.button-bg:hover {
+    background-color: #0099ff;
+}
+
+.button-bg:active {
+    color: red;
+}

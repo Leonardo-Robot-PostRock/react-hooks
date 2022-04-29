@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import ThemeContext from "../context/ThemeContext";
+import "../styles/Header.css";
+
 const Header = (props) => {
   const color = useContext(ThemeContext);
 
@@ -8,11 +10,16 @@ const Header = (props) => {
   //   };
   return (
     <div className="Header">
-      <h1 style={{color}}>React Hooks</h1>
+      <h1>Rick and Morty</h1>
+      <h1 style={{ color }}>React Hooks</h1>
       {/* <button type="button" onClick={handleClick}>
         {darkMode ? "Dark Mode" : "Light Mode"}
       </button> */}
-      <button type="button" onClick={() => props.onClick()}>
+      <button
+        className="button-bg"
+        type="button"
+        onClick={() => props.onClick()}
+      >
         {props.darkMode ? "Light Mode" : "Dark Mode"}
       </button>
     </div>

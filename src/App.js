@@ -9,7 +9,6 @@ function App() {
 
   return (
     <div className={"App " + bg} >
-      <h1>Rick and Morty</h1>
       <Header darkMode={darkMode} onClick={() => setDarkMode(!darkMode)} />
       <Characters />
     </div>

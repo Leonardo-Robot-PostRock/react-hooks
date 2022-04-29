@@ -1,27 +1,64 @@
-.favorite {
+.favourite {
+    display: grid;
+    gap: 10px;
     margin: 10px auto 0;
-    justify-content: center;
+    width: 80%;
+    min-width: 320px;
+    place-content: center;
+    grid-template-columns: repeat(3, 100px);
+}
+
+.favourite--section {
+    margin: 10px auto 0;
+    justify-items: center;
     align-items: center;
     justify-items: center;
     display: grid;
-    height: max-content;
-    width: 80%;
-    min-width: 320px;
-    grid-row: 100px;
-    grid-template-columns: repeat(3, 100px);
+    grid-template-areas:
+        "one"
+        "two";
     gap: 10px;
 }
 
-.favorite img {
-    width: 100px;
+.imageFavourite {
+    grid-area: one;
+    width: 70px;
     border-radius: 50%;
 }
 
-.bg-light .favorite img {
+.favourite--button__color {
+    grid-area: two;
+}
+
+.favourite--button__color {
+    font-size: 1rem;
+    background-color: none;
+    border: none;
+    border-radius: 50%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.favourite--button__size {
+    width: 20px;
+    border-radius: 50%;
+}
+
+.bg-light .favourite--button__size {
+    border: gray solid 0.5px;
+}
+
+.bg-dark .favourite--button__size {
+    border: red solid 0.5px;
+}
+
+.bg-light .favourite .imageFavourite {
     border: solid 2px black;
 }
 
-.bg-dark .favorite img {
+.bg-dark .favourite .imageFavourite {
     border: solid 2px white;
 }
 
@@ -89,6 +126,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 1);
     border: solid 1px rgba(14, 69, 158, 0.35);
 }
+
 .bg-dark .container-character button img {
     box-shadow: 0 0 10px rgba(255, 255, 255, 1);
     border: solid 1px rgba(255, 255, 255, 0.35);
@@ -118,23 +156,17 @@
     font-size: 1.2em;
 }
 
-@media(min-width: 320px) {
-    .favorite {
-        grid-template-columns: repeat(3, 80px);
-    }
-
-    .favorite img {
-        width: 80px;
-    }
-}
-
 @media(min-width: 768px) {
-    .favorite {
+    .favourite {
         grid-template-columns: repeat(6, 100px);
     }
 
-    .favorite img {
+    .favourite .imageFavourite {
         width: 100px;
+    }
+
+    .bg-dark .favourite--button__size {
+        width: 30px;
     }
 
     .Characters {
@@ -155,8 +187,8 @@
         grid-template-columns: repeat(3, 300px);
     }
 
-    .favorite {
-        grid-template-columns: repeat(9, 100px);
+    .favourite {
+        grid-template-columns: repeat(8, 100px);
     }
 
     .container-character img {
@@ -165,7 +197,7 @@
 }
 
 @media (min-width: 1366px) {
-    .favorite {
+    .favourite {
         grid-template-columns: repeat(10, 100px);
     }
 
