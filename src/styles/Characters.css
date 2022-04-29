@@ -31,7 +31,6 @@
 }
 
 .favourite--button__color {
-    font-size: 1rem;
     background-color: none;
     border: none;
     border-radius: 50%;
@@ -44,6 +43,14 @@
 .favourite--button__size {
     width: 20px;
     border-radius: 50%;
+}
+
+.favourite--button__size:hover {
+    background-color: black;
+}
+
+.favourite--button__size:active {
+    width: 18px;
 }
 
 .bg-light .favourite--button__size {
@@ -77,10 +84,11 @@
 /*Background dinámico*/
 .container {
     display: grid;
-    grid-template-rows: 340px 250px;
+    grid-template-rows: 340px 180px;
     border-radius: 10px;
     place-content: center;
     place-items: center;
+    padding: 0 5px;
 }
 
 .bg-light .container {
@@ -97,6 +105,15 @@
     gap: 5px;
     justify-items: center;
     align-items: flex-end;
+}
+
+.container-character .item-1 {
+    font-size: 2rem;
+}
+
+.item {
+    margin: 0;
+    font-size: 1.4rem;
 }
 
 .container-character img {
@@ -141,19 +158,9 @@
     transition: all 0.3s;
 }
 
-.container-character h2 {
-    margin: 0;
-    font-size: 1.2em;
-}
-
 .container-data {
     display: grid;
     gap: 10px;
-}
-
-.container-data h3 {
-    margin: 0;
-    font-size: 1.2em;
 }
 
 @media(min-width: 768px) {
@@ -165,21 +172,26 @@
         width: 100px;
     }
 
-    .bg-dark .favourite--button__size {
+    .favourite--button__size {
         width: 30px;
     }
 
-    .Characters {
-        grid-template-columns: repeat(2, 240px);
+    .favourite--button__size:active {
+        width: 25px;
     }
 
-    .container-character {
-        grid-template-rows: 40px 230px;
-    }
 
-    .container-character img {
-        width: 90%;
-    }
+.Characters {
+    grid-template-columns: repeat(2, 240px);
+}
+
+.container-character {
+    grid-template-rows: 40px 230px;
+}
+
+.container-character img {
+    width: 90%;
+}
 }
 
 @media (min-width: 1000px) {

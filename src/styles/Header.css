@@ -11,8 +11,17 @@
     border: none;
     background-color: blue;
     color: white;
+    font-size: 1.6rem;
     font-weight: bold;
     border-radius: 5px;
+}
+
+h1{
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
 }
 
 .button-bg:hover {

@@ -79,7 +79,7 @@ const Characters = () => {
         {characters.map((character) => (
           <div className={"container " + bg} key={character.id}>
             <div className="container-character">
-              <h2 className="item item-1">{character.name}</h2>
+              <h3 className="item item-1">{character.name}</h3>
               <img
                 src={character.image}
                 className="item item-6"

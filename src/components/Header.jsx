@@ -11,7 +11,7 @@ const Header = (props) => {
   return (
     <div className="Header">
       <h1>Rick and Morty</h1>
-      <h1 style={{ color }}>React Hooks</h1>
+      <h2 style={{ color }}>React Hooks</h2>
       {/* <button type="button" onClick={handleClick}>
         {darkMode ? "Dark Mode" : "Light Mode"}
       </button> */}
