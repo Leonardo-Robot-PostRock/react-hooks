@@ -137,6 +137,7 @@
 .container-character button img {
     width: 40px;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .bg-light .container-character button img {
@@ -150,12 +151,11 @@
 }
 
 .container-character button img:hover {
-    border-radius: 50%;
+   width: 42px;
 }
 
 .container-character button img:active {
-    width: 35px;
-    transition: all 0.3s;
+    width: 38px;
 }
 
 .container-data {
