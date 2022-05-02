@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useReducer } from "react";
+import React, { useState, useEffect, useReducer, useMemo } from "react";
 import useInitialState from "../hooks/useInitialState";
 import "../styles/Characters.css";
 import add from "../asset/icon/plus.png";
@@ -33,6 +33,7 @@ const favouriteReducer = (state, action) => {
 const Characters = () => {
   const [characters, setCharacters] = useState([]);
   const [favourites, dispatch] = useReducer(favouriteReducer, initialState);
+  const [search, setSearch] = useState("");
   const { bg } = useInitialState();
 
   useEffect(() => {
@@ -55,9 +56,29 @@ const Characters = () => {
     });
   };
 
+  const handleSearch = (event) => {
+    setSearch(event.target.value);
+  };
+
+  // const filteredUsers = characters.filter((user) => {
+  //   return user.name.toLowerCase().includes(search.toLowerCase());
+  // });
+
+  const filteredUsers = useMemo(
+    () =>
+      characters.filter((user) => {
+        return user.name.toLowerCase().includes(search.toLowerCase());
+      }),
+    [characters, search]
+  );
+  
   return (
     <>
       <div className="favourite">
+        <div>
+          <input type="text" value={search} onChange={handleSearch} />
+        </div>
+
         {favourites.favourites.map((favourite) => (
           <div className="favourite--section" key={favourite.id}>
             <img
@@ -70,13 +91,17 @@ const Characters = () => {
               className="favourite--button__color"
               onClick={() => handleClickRemove(favourite)}
             >
-              <img  className="favourite--button__size" src={deleteFavourite} alt="delete icon"/>
+              <img
+                className="favourite--button__size"
+                src={deleteFavourite}
+                alt="delete icon"
+              />
             </button>
           </div>
         ))}
       </div>
       <div className="Characters">
-        {characters.map((character) => (
+        {filteredUsers.map((character) => (
           <div className={"container " + bg} key={character.id}>
             <div className="container-character">
               <h3 className="item item-1">{character.name}</h3>
