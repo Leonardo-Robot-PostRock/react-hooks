@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useReducer, useMemo } from "react";
+import React, { useState, useEffect, useReducer, useMemo, useRef } from "react";
 import useInitialState from "../hooks/useInitialState";
 import "../styles/Characters.css";
 import add from "../asset/icon/plus.png";
@@ -35,6 +35,7 @@ const Characters = () => {
   const [favourites, dispatch] = useReducer(favouriteReducer, initialState);
   const [search, setSearch] = useState("");
   const { bg } = useInitialState();
+  const searchInput = useRef(null);
 
   useEffect(() => {
     fetch("https://rickandmortyapi.com/api/character/")
@@ -56,13 +57,10 @@ const Characters = () => {
     });
   };
 
-  const handleSearch = (event) => {
-    setSearch(event.target.value);
+  const handleSearch = () => {
+    setSearch(searchInput.current.value);
   };
 
-  // const filteredUsers = characters.filter((user) => {
-  //   return user.name.toLowerCase().includes(search.toLowerCase());
-  // });
 
   const filteredUsers = useMemo(
     () =>
@@ -79,6 +77,7 @@ const Characters = () => {
           <input
             type="text"
             value={search}
+            ref={searchInput}
             onChange={handleSearch}
             placeholder="Buscar"
           />

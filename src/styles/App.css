@@ -10,8 +10,11 @@
     background-color: black;
     min-width: 320px;
     transition: all 0.5s;
+    height: 100%;
+    min-height: 100vh;
 }
 
 .bg-light {
     transition: all 0.5s;
+    height: 100%;
 }
