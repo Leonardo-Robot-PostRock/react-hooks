@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useReducer, useMemo, useRef } from "react";
+import React, { useState, useEffect, useReducer, useMemo, useRef, useCallback } from "react";
 import useInitialState from "../hooks/useInitialState";
 import "../styles/Characters.css";
 import add from "../asset/icon/plus.png";
 import deleteFavourite from "../asset/icon/delete.png";
+import Search from "./Search";
 
 const initialState = {
   favourites: [],
@@ -57,10 +58,13 @@ const Characters = () => {
     });
   };
 
-  const handleSearch = () => {
-    setSearch(searchInput.current.value);
-  };
+  // const handleSearch = () => {
+  //   setSearch(searchInput.current.value);
+  // };
 
+  const handleSearch = useCallback(() => {
+    setSearch(searchInput.current.value);
+  },[])
 
   const filteredUsers = useMemo(
     () =>
@@ -73,15 +77,11 @@ const Characters = () => {
   return (
     <>
       <div className="favourite">
-        <div className="container-inputSearch">
-          <input
-            type="text"
-            value={search}
-            ref={searchInput}
-            onChange={handleSearch}
-            placeholder="Buscar"
-          />
-        </div>
+        <Search
+          search={search}
+          searchInput={searchInput}
+          handleSearch={handleSearch}
+        />
         {favourites.favourites.map((favourite) => (
           <div className="favourite--section" key={favourite.id}>
             <img
