@@ -71,14 +71,18 @@ const Characters = () => {
       }),
     [characters, search]
   );
-  
+
   return (
     <>
       <div className="favourite">
-        <div>
-          <input type="text" value={search} onChange={handleSearch} />
+        <div className="container-inputSearch">
+          <input
+            type="text"
+            value={search}
+            onChange={handleSearch}
+            placeholder="Buscar"
+          />
         </div>
-
         {favourites.favourites.map((favourite) => (
           <div className="favourite--section" key={favourite.id}>
             <img
